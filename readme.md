@@ -7,3 +7,24 @@
 [![Version](https://img.shields.io/packagist/v/weew/php-commander-container-aware.svg)](https://packagist.org/packages/weew/php-commander-container-aware)
 [![Licence](https://img.shields.io/packagist/l/weew/php-commander-container-aware.svg)](https://packagist.org/packages/weew/php-commander-container-aware)
 
+## Table of contents
+
+- [Installation](#installation)
+- [Introduction](#introduction)
+- [Usage](#usage)
+
+## Installation
+
+`composer require weew/php-commander-container-aware`
+
+## Introduction
+
+This package integrates [weew/php-commander](https://github.com/weew/php-commander) with [weew/php-container](https://github.com/weew/php-container) and allows command handlers to rely on dependency injection and sharing of data trough the container.
+
+## Usage
+
+Simply create a container aware instance of `ICommander` and pass in an instance of `IContainer`.
+
+```php
+$commander = new Weew\Commander\ContainerAware\Commander(new Container());
+```
