@@ -2,7 +2,6 @@
 
 namespace Weew\Commander\ContainerAware\Invokers;
 
-use Weew\Commander\ICommandHandler;
 use Weew\Commander\Invokers\CommandHandlerInvoker as BaseInvoker;
 use Weew\Container\IContainer;
 
@@ -31,12 +30,12 @@ class CommandHandlerInvoker extends BaseInvoker {
     }
 
     /**
-     * @param ICommandHandler $handler
+     * @param $handler
      * @param $command
      *
      * @return mixed
      */
-    protected function invokeHandler(ICommandHandler $handler, $command) {
+    protected function invokeHandler($handler, $command) {
         return $this->container->callMethod(
             $handler, 'handle', ['command' => $command]
         );
