@@ -18,4 +18,13 @@ class CallableHandlerInvokerTest extends PHPUnit_Framework_TestCase {
         $result = $invoker->invoke($definition, (object) ['foo' => 'bar']);
         $this->assertEquals('bar', $result);
     }
+
+    public function test_invoke_with_task() {
+        $invoker = new CallableHandlerInvoker(new Container());
+        $definition = new Definition(stdClass::class, function(FooStub $stub, $task) {
+            return $task->foo;
+        });
+        $result = $invoker->invoke($definition, (object) ['foo' => 'bar']);
+        $this->assertEquals('bar', $result);
+    }
 }

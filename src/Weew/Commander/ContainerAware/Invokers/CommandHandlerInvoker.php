@@ -37,7 +37,7 @@ class CommandHandlerInvoker extends BaseInvoker {
      */
     protected function invokeHandler($handler, $command) {
         return $this->container->callMethod(
-            $handler, 'handle', ['command' => $command]
+            $handler, 'handle', ['command' => $command, 'task' => $command]
         );
     }
 }

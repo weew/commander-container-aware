@@ -27,6 +27,8 @@ class CallableHandlerInvoker extends BaseInvoker {
      * @return mixed
      */
     protected function invokeHandler(callable $handler, $command) {
-        return $this->container->call($handler, ['command' => $command]);
+        return $this->container->call(
+            $handler, ['command' => $command, 'task' => $command]
+        );
     }
 }
