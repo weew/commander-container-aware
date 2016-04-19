@@ -17,4 +17,11 @@ class CommanderTest extends PHPUnit_Framework_TestCase {
         $this->assertTrue($invokers[0] instanceof CallableHandlerInvoker);
         $this->assertTrue($invokers[1] instanceof CommandHandlerInvoker);
     }
+
+    public function test_get_and_set_container() {
+        $commander = new Commander(new Container());
+        $container = new Container();
+        $commander->setContainer($container);
+        $this->assertTrue($commander->getContainer() === $container);
+    }
 }
