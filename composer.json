@@ -1,6 +1,6 @@
 {
-    "name": "weew/php-commander-container-aware",
-    "description": "Container integration for the weew/php-commander package.",
+    "name": "weew/commander-container-aware",
+    "description": "Container integration for the weew/commander package.",
     "license": "MIT",
     "authors": [
         {
@@ -19,8 +19,8 @@
         }
     },
     "require": {
-        "weew/php-container": "^1.1",
-        "weew/php-commander": "^2.1"
+        "weew/container": "^1.1",
+        "weew/commander": "^2.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.7",
